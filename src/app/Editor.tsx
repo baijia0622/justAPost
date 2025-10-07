@@ -1,6 +1,4 @@
 import EditorJS, {API, BlockMutationEvent} from '@editorjs/editorjs';
-import Header from '@editorjs/header';
-import List from '@editorjs/list';
 
 const editor = new EditorJS({
     // 預設為唯獨
@@ -21,17 +19,14 @@ const editor = new EditorJS({
     // 工具配置
     // 傳入每個工具的類別或物件
     tools: {
-        header: {
-            class: Header,
-            inlineToolbar: true
-        },
     },
 
+    // 內容變更時觸發
     onChange(api: API, event: BlockMutationEvent | BlockMutationEvent[]) {
         console.log('你編輯了：', event);
     }
 
-    data: {}
+    // data?: OutputData;
 });
 
 // promise寫法
@@ -51,4 +46,10 @@ try {
     console.log(`Editor準備失敗，原因：${reason}`)
 }
 
+// 儲存內容並發出
+editor.save().then((outputData) => {
+    console.log('Article data: ', outputData)
+}).catch((error) => {
+    console.log('Saving failed: ', error)
+});
 

@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@editorjs/editorjs": "^2.31.0",
+    "@editorjs/header": "^2.8.8",
     "next": "15.5.4",
     "react": "19.1.0",
     "react-dom": "19.1.0"
