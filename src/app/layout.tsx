@@ -25,15 +25,19 @@ export default function RootLayout({
     return (
         <html lang="en">
         <body
-            className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+            className={`${geistSans.variable} ${geistMono.variable} antialiased bg-gray-100 text-gray-600 relative`}
         >
-        <div className={`flex justify-center items-center flex-col w-full`}>
-            <h1 className={``}>一則貼文</h1>
-            <p>這是一個可以無限回復的貼文，僅此而已</p>
+        <div className={`flex justify-center items-center flex-col w-full box-border p-10 gap-5 h-screen`}>
+            <div className={`flex justify-center items-center flex-col w-full shrink`}>
+                <h1 className={`font-black`}>一則貼文</h1>
+                <p>這是一個可以無限回復的貼文，僅此而已</p>
+            </div>
+            <main className={`flex-1 lg:w-[1024] w-full rounded-xl border border-white bg-white/30 relative overflow-y-auto `}>
+                <div className={`w-full p-4 box-border`}>
+                    {children}
+                </div>
+            </main>
         </div>
-        <main>
-            {children}
-        </main>
         </body>
         </html>
     );
