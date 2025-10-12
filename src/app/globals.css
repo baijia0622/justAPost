@@ -127,3 +127,52 @@ h1 {
         @apply bg-background text-foreground;
     }
 }
+
+.tiptap {
+    @apply border bg-white p-2 px-5 py-6 rounded-lg;
+
+    /* Blockquote Style */
+    blockquote {
+        @apply border-l-3 border-b-gray-300 pl-2;
+    }
+
+    /* List styles */
+    ul,
+    ol {
+        @apply p-0.5 mt-1 ml-5 mb-1;
+
+        li p {
+            @apply mx-0.5;
+        }
+    }
+
+    ul {
+        @apply list-['✦'];
+
+        ul {
+            @apply mt-0;
+            @apply list-['⌊'];
+        }
+    }
+
+    ol {
+        @apply list-decimal;
+    }
+
+    /* Basic editor styles */
+    mark {
+        @apply bg-amber-100 border-b-2 border-amber-300 box-decoration-clone px-1 py-0.5;
+    }
+}
+
+.tiptap-btn {
+    @apply cursor-pointer hover:bg-gray-100 transition-all rounded-sm p-1 mx-0.5
+}
+
+.is-active {
+    @apply bg-gray-600 text-white hover:bg-gray-400;
+}
+
+.button-goup {
+    @apply border-r border-b-gray-100 last:border-none px-1;
+}

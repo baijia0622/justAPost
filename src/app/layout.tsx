@@ -1,6 +1,8 @@
 import type {Metadata} from "next";
 import {Geist, Geist_Mono} from "next/font/google";
 import "./globals.css";
+import PostButton from "@/components/postButton";
+import React from "react";
 
 const geistSans = Geist({
     variable: "--font-geist-sans",
@@ -32,11 +34,12 @@ export default function RootLayout({
                 <h1 className={`font-black`}>一則貼文</h1>
                 <p>這是一個可以無限回復的貼文，僅此而已</p>
             </div>
-            <main className={`flex-1 lg:w-[1024] w-full rounded-xl border border-white bg-white/30 relative overflow-y-auto `}>
+            <main className={`flex-1 lg:w-[1024] w-full rounded-xl border border-white bg-white/30 relative overflow-y-auto`}>
                 <div className={`w-full p-4 box-border`}>
                     {children}
                 </div>
             </main>
+            <PostButton/>
         </div>
         </body>
         </html>
