@@ -1,13 +1,13 @@
 import EditorJS, {API, BlockMutationEvent} from '@editorjs/editorjs';
 
-const editor = new EditorJS({
+const editor_Deprecation = new EditorJS({
     // 預設為唯獨
     readOnly: true,
 
     // 開始後解除唯獨模式
     onReady: () => {
         console.log('聊天室已經準備好囉!!')
-        editor.readOnly.toggle();
+        editor_Deprecation.readOnly.toggle();
     },
 
     // 編輯器的ID
@@ -30,7 +30,7 @@ const editor = new EditorJS({
 });
 
 // promise寫法
-// editor.isReady
+// editor_Deprecation.isReady
 //     .then(()=>{
 //         console.log('Editor已經準備好了')
 //     })
@@ -40,14 +40,14 @@ const editor = new EditorJS({
 
 // async/await寫法
 try {
-    await editor.isReady;
+    await editor_Deprecation.isReady;
     console.log('Editor已經準備好了')
 } catch (reason) {
     console.log(`Editor準備失敗，原因：${reason}`)
 }
 
 // 儲存內容並發出
-editor.save().then((outputData) => {
+editor_Deprecation.save().then((outputData) => {
     console.log('Article data: ', outputData)
 }).catch((error) => {
     console.log('Saving failed: ', error)
